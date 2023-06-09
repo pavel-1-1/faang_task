@@ -23,4 +23,9 @@ public class GrupStudent {
     public int hashCode() {
         return Objects.hash(faculty, year);
     }
+
+    @Override
+    public String toString() {
+        return "Факультет: " + faculty + " курс: " + year;
+    }
 }
