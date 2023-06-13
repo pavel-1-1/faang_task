@@ -1,20 +1,36 @@
 package org.example.studentsList.user;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class User {
     private String name;
+
     private int age;
+
+    private String company;
+
+    private String city;
+
+    private final Set<String> VALID_JOBS = Set.of("Google", "Uber", "Amazon");
+    private final Set<String> VALID_ADDRESSES = Set.of("London", "New York", "Amsterdam");
 
     public User() {
     }
 
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public User(String name, int age, String company, String city) {
+        validUser(name, age, company, city);
+    }
+
+    private void validUser(String name, int age, String company, String city) throws IllegalArgumentException {
+        if (!name.isBlank() && !(age < 18) && VALID_JOBS.contains(company) && VALID_ADDRESSES.contains(city)) {
+            this.name = name;
+            this.age = age;
+            this.company = company;
+            this.city = city;
+            return;
+        }
+        throw new IllegalArgumentException("не допустимые значения !!!");
+
     }
 
     public static Map<Integer, List<User>> getGroupUserAge(List<User> users) {
@@ -42,17 +58,33 @@ public class User {
         this.age = age;
     }
 
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return age == user.age && Objects.equals(name, user.name);
+        return age == user.age && Objects.equals(name, user.name) && Objects.equals(company, user.company) && Objects.equals(city, user.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age);
+        return Objects.hash(name, age, company, city);
     }
 
     @Override

@@ -6,22 +6,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        List<User> users = new ArrayList<>();
-        users.add(new User("pavel", 23));
-        users.add(new User("ivan", 23));
-        users.add(new User("pavel", 21));
-        users.add(new User("dima", 21));
-        users.add(new User("petr", 21));
-        users.add(new User("pavel", 32));
-        users.add(new User("leha", 32));
-        users.add(new User("rinat", 32));
-        users.add(new User("anton", 23));
+    private static final List<User> users = new ArrayList<>();
 
+    public static void main(String[] args) {
+
+        checkUserValid("pavel", 23, "Google", "London");
+        checkUserValid("ivan", 23, "Uber", "Amsterdam");
+        checkUserValid("pavel", 21, "Amazon", "New York");
+        checkUserValid("dima", 21, "Google", "London");
+        checkUserValid("petr", 21, "Uber", "Amsterdam");
+        checkUserValid("pavel", 32, "Amazon", "New York");
+        checkUserValid("leha", 32, "Google", "London");
+        checkUserValid("rinat", 32, "Uber", "Amsterdam");
+        checkUserValid("anton", 23, "Amazon", "New York");
 
         User.getGroupUserAge(users).forEach((key, value) -> {
             System.out.println(key);
             value.forEach(n -> System.out.println(n.toString()));
         });
+    }
+
+    private static void checkUserValid(String name, int age, String company, String city) {
+        try {
+            users.add(new User(name, age, company, city));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
     }
 }
