@@ -1,4 +1,4 @@
-package userTest.characterTest;
+package characterTest;
 
 import org.example.Abstraction.character.Archer;
 import org.example.Abstraction.character.Character;

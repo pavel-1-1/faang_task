@@ -30,7 +30,6 @@ public class User {
             return;
         }
         throw new IllegalArgumentException("не допустимые значения !!!");
-
     }
 
     public static Map<Integer, List<User>> getGroupUserAge(List<User> users) {
