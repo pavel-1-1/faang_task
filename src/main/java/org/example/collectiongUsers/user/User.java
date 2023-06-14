@@ -6,7 +6,13 @@ public class User {
     private int id;
     private String name;
     private int age;
-    private final Set<String> activities = new HashSet<>();
+    private Set<String> activities;
+
+    public User(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 
     public Map<User, String> findHobbyLovers(List<User> users, Set<String> activities) {
         Map<User, String> map = new HashMap<>();
@@ -49,6 +55,14 @@ public class User {
 
     public Set<String> getActivities() {
         return activities;
+    }
+
+    public void setActivities(Set<String> activities) {
+        this.activities = activities;
+    }
+
+    public void setAddActivities(String activities) {
+        this.activities.add(activities);
     }
 
     @Override

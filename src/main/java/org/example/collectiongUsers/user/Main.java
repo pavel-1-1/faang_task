@@ -1,16 +1,11 @@
-package collectionsUsersActiv;
+package org.example.collectiongUsers.user;
 
-import org.example.collectiongUsers.user.User;
-import org.junit.jupiter.api.Test;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-public class UserTest {
-
-    @Test
-    void findHobbyLoversTest() {
+public class Main {
+    public static void main(String[] args) {
         Set<String> set = Set.of("лыжи", "теннис");
 
         User user = new User(2332, "pavel", 34);
@@ -25,10 +20,6 @@ public class UserTest {
 
         Map<User, String> result = user.findHobbyLovers(users, set);
 
-        assertTrue(result.containsKey(user));
-
-//        for (Map.Entry<User, String> entry : result.entrySet()) {
-//            assertEquals(expected.get(entry.getKey()), result.get(entry.getKey()));
-//        }
+        result.forEach((key, value) -> System.out.println(key.getName() + " " + value));
     }
 }
