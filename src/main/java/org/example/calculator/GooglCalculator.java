@@ -3,9 +3,9 @@ package org.example.calculator;
 import java.util.List;
 
 public class GooglCalculator {
-    static Calculator<Integer, Integer> multi = (a, b) -> a * b;
+    private final static Calculator<Integer, Integer> multi = (a, b) -> a * b;
 
-    static Calculator<Integer, Integer> sum = (a, b) -> a + b;
+    private final static Calculator<Integer, Integer> sum = (a, b) -> a + b;
 
 
     public static int product(List<Integer> nums) {
