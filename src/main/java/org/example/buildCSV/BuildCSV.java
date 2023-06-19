@@ -15,7 +15,7 @@ public class BuildCSV {
 
     private static final MatrixJoiner<String> matrixJoiner = list -> {
         StringBuilder builder = new StringBuilder();
-        list.stream().map(vectorJoiner::join).map(string -> builder.append(string).append("\n"));
+        list.stream().map(vectorJoiner::join).forEach(string -> builder.append(string).append("\n"));
         return builder.toString();
     };
 
