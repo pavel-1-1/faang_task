@@ -16,12 +16,12 @@ public class User {
 
     public Map<User, String> findHobbyLovers(List<User> users, Set<String> activities) {
         Map<User, String> map = new HashMap<>();
-        Iterator<String> iterator = activities.iterator();
         users.forEach(user -> {
+            Iterator<String> iterator = activities.iterator();
             while (iterator.hasNext()) {
-                String activ = iterator.next();
-                if (user.getActivities().contains(activ)) {
-                    map.put(user, activ);
+                String activity = iterator.next();
+                if (user.getActivities().contains(activity)) {
+                    map.put(user, activity);
                     break;
                 }
             }

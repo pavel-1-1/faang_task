@@ -25,7 +25,10 @@ public class UserTest {
 
         Map<User, String> result = user.findHobbyLovers(users, set);
 
-        assertTrue(result.containsKey(user));
+
+
+        //assertEquals(expected.get(user), result.get(user));
+        assertEquals(expected.get(user1), result.get(user1));
 
 //        for (Map.Entry<User, String> entry : result.entrySet()) {
 //            assertEquals(expected.get(entry.getKey()), result.get(entry.getKey()));
