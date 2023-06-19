@@ -16,14 +16,14 @@ public class GooglCalculator {
         return calculate(nums, sum);
     }
 
-    public static int calculate(List<Integer> nums, Calculator calculator) throws IllegalArgumentException {
+    private static int calculate(List<Integer> nums, Calculator calculator) throws IllegalArgumentException {
         if (nums.isEmpty()) {
             throw new IllegalArgumentException("empty list");
         }
 
         int result = nums.get(0);
-        for (Integer num : nums) {
-            result = (int) calculator.add(result, num);
+        for (int i = 1; i < nums.size(); i++) {
+            result = (int) calculator.add(result, nums.get(i));
         }
         return result;
     }
