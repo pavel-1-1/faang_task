@@ -35,7 +35,7 @@ public class Main {
             }
         }
     }
-//    private static void searchKey(String key) {
-//        if (mapContents.containsKey())
-//    }
+    private static void removeWebpage(String url) {
+
+    }
 }
