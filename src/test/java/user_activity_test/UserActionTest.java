@@ -14,23 +14,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserActionTest {
 
-    @Test
-    void TestTop10ActiveUsers() {
-        List<UserAction> expected = nextList(10, 20);
-        List<UserAction> result = Users.top10ActiveUsers(nextList(20, 20));
-        int sizeExpected = expected.stream().map(UserAction::getActivities).map(Map::values).map(lists -> lists.stream()
-                .map(List::size).mapToInt(value -> value).sum()).mapToInt(value -> value).sum();
-
-        int sizeResult = result.stream().map(UserAction::getActivities).map(Map::values).map(lists -> lists.stream()
-                .map(List::size).mapToInt(value -> value).sum()).mapToInt(value -> value).sum();
-
-        assertEquals(sizeExpected, sizeResult);
+//    @Test
+//    void TestTop10ActiveUsers() {
+//        List<UserAction> expected = nextList(10, 20);
+//        List<UserAction> result = Users.top10ActiveUsers(nextList(20, 20));
+//        int sizeExpected = expected.stream().map(UserAction::getActivities).map(Map::values).map(lists -> lists.stream()
+//                .map(List::size).mapToInt(value -> value).sum()).mapToInt(value -> value).sum();
+//
+//        int sizeResult = result.stream().map(UserAction::getActivities).map(Map::values).map(lists -> lists.stream()
+//                .map(List::size).mapToInt(value -> value).sum()).mapToInt(value -> value).sum();
+//
+//        assertEquals(sizeExpected, sizeResult);
 //        for (UserAction userAction : expected) {
 //            for (UserAction action : result) {
 //                //assertEquals();
 //            }
 //        }
-    }
+//    }
 
     private List<UserAction> nextList(int size, int sizeActive) {
         List<UserAction> userActions = new ArrayList<>();

@@ -37,6 +37,6 @@ public class GoogleCalculatorTest {
 
         String expectedMessage = "empty list";
         String resultMessage = exception.getMessage();
-        assertTrue(resultMessage.equals(expectedMessage));
+        assertEquals(resultMessage, expectedMessage);
     }
 }
